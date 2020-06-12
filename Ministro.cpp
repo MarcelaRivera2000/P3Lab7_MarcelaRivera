@@ -5,3 +5,6 @@ Ministro:: Ministro(string color,int x,int y, Pieza*** tablero,char simbolo) : P
 	
 }
 
+bool Ministro:: valid(int,int){
+	
+}

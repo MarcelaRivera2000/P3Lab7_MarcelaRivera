@@ -19,7 +19,7 @@ class Pieza{
 		int x,y;
 		char simbolo;
 		
-		bool validacion(int,int);
+		bool validacionDentro(int,int);
 		virtual bool valid(int,int)=0;
 		
 		

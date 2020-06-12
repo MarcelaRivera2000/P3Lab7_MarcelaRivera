@@ -5,4 +5,8 @@ Torre:: Torre(string color,int x,int y, Pieza*** tablero,char simbolo) : Pieza( 
 	
 }
 
+bool Torre:: valid(int,int){
+	
+}
+
 

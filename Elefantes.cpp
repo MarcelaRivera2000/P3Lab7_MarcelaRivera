@@ -5,3 +5,6 @@ Elefantes:: Elefantes(string color,int x,int y, Pieza*** tablero,char simbolo) :
 	
 }
 
+bool Elefantes:: valid(int,int){
+	
+}

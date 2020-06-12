@@ -2,12 +2,15 @@
 #define TORRE_H
 #include "Pieza.h"
 
-class Torre : Pieza{
+class Torre :public Pieza{
 	public:
 		Torre(string,int,int,Pieza***,char);
-		
+		bool valid(int,int);
 	protected:
-		
+		string color;
+		Pieza*** tablero;
+		int x,y;
+		char simbolo;
 		
 };
 

@@ -1,11 +1,10 @@
 #include <iostream>
-
+#include "Chaturanga.h"
 
 using namespace std; 
 using std::cin;
 using std::endl;
 using std::cout;
-
 
 int main(int argc, char** argv) {	
 	while (true){
@@ -14,7 +13,8 @@ int main(int argc, char** argv) {
 	cin>>op;
 	switch(op){
 		case 1:{
-			
+			Chaturanga h;
+			h.Juego();
 			break;
 		}
 		case 2:{
@@ -25,3 +25,18 @@ int main(int argc, char** argv) {
 	}
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -2,12 +2,15 @@
 #define MINISTRO_H
 #include "Pieza.h"
 
-class Ministro : Pieza{
+class Ministro : public Pieza{
 	public:
 		Ministro(string,int,int,Pieza***,char);
-		
+		bool valid(int,int);
 	protected:
-		
+		string color;
+		Pieza*** tablero;
+		int x,y;
+		char simbolo;
 		
 };
 

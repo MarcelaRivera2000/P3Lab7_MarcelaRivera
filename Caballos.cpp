@@ -5,4 +5,7 @@ Caballos:: Caballos(string color,int x,int y, Pieza*** tablero,char simbolo) : P
 	
 }
 
+bool Caballos:: valid(int,int){
+	
+}
 
