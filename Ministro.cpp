@@ -5,6 +5,10 @@ Ministro:: Ministro(string color,int x,int y, Pieza*** tablero,char simbolo) : P
 	
 }
 
-bool Ministro:: valid(int,int){
-	
+bool Ministro:: valid(int f ,int c){
+	if((f+1 == x && c+1 == y)||(f-1 == x && c-1 == y)||(f+1 == x && c-1 == y)||(f-1 == x && c+1 == y)){
+		return true;
+	}else{
+		return false;
+	}	
 }

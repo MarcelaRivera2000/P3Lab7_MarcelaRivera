@@ -7,10 +7,6 @@ class Torre :public Pieza{
 		Torre(string,int,int,Pieza***,char);
 		bool valid(int,int);
 	protected:
-		string color;
-		Pieza*** tablero;
-		int x,y;
-		char simbolo;
 		
 };
 

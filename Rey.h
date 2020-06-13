@@ -8,10 +8,7 @@ class Rey : public Pieza{
 		bool valid(int,int);
 		
 	protected:
-		string color;
-		Pieza*** tablero;
-		int x,y;
-		char simbolo;
+
 		
 };
 

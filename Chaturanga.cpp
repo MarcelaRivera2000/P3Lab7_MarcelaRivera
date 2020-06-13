@@ -8,9 +8,9 @@ using std::cout;
 Chaturanga::Chaturanga(){
 
 }
-
+Pieza*** tablero;
 void Chaturanga::Juego(){
-	Pieza*** tablero;
+	
 	tablero = new Pieza**[8];
 	for(int i=0; i<8;i++){
 		tablero[i]=new Pieza*[8];
@@ -53,20 +53,44 @@ void Chaturanga::Juego(){
 	tablero[0][3] = new Ministro("negro",0,3,tablero,'M');
 	tablero[0][4] = new Rey("negro",0,3,tablero,'R');
 	
-	imprimir(tablero);
-	
 	while(true){
+		imprimir(tablero);
 		string cord1;
 		cout<<"(Piezas blancas) Ingrese las coordenadas Jugador 1 "<<endl<<":";
 		cin>>cord1;
+		if(cord1=="salir"){
+			cout<<"Gracias por jugar :D"<<endl;
+			exit (EXIT_FAILURE);
+		}else{
 		tokenss(cord1);
-		//cout<<"posi1: "<<x_esta<<y_esta<<endl<<"posi2: "<<x_quiere<<y_quiere<<endl;
-		
-		
-		
+			if(tablero[x_esta][y_esta]->getColor()=="blanco"){
+				while(tablero[x_esta][y_esta]->movimiento(x_quiere,y_quiere)==false){
+					string c;
+					cout<<"ERROR:Ingrese las coordenadas denuevo"<<endl<<":";
+					cin	>>c;
+					tokenss(c);	
+				}	
+			}	
+		}
+		imprimir(tablero);
+		string cord2;
+		cout<<"(Piezas negras) Ingrese las coordenadas Jugador 2 "<<endl<<":";
+		cin>>cord2;
+		if(cord2=="salir"){
+			cout<<"Gracias por jugar :D"<<endl;
+			exit (EXIT_FAILURE);
+		}else{
+		tokenss(cord2);
+			if(tablero[x_esta][y_esta]->getColor()=="negro"){
+				while(tablero[x_esta][y_esta]->movimiento(x_quiere,y_quiere)==false){
+					string c;
+					cout<<"ERROR:Ingrese las coordenadas denuevo"<<endl<<":";
+					cin	>>c;
+					tokenss(c);	
+				}	
+			}	
+		}
 	}
-	
-	
 }
 
 
@@ -95,15 +119,20 @@ void Chaturanga:: tokenss(string cords){
 	}else{
 		int x=(int)cords[0];
 		int y=(int)cords[3];
+	
 		if((x>=65&&x<=72)||(y>=65&&y<=72)){
-			x_esta=x-65;
-			x_quiere=y-65;
+		
+			y_esta=x-65;
+			y_quiere=y-65;
 			
 			int x2=(int)cords[1];
 			int y2=(int)cords[4];
+			
 			if((x2>=48&&x2<=55)||(y2>=48&&y2<=55)){
-			y_esta=x2-48;
-			y_quiere=y2-48;
+			
+			x_esta=x2-48;
+			x_quiere=y2-48;
+			
 			}else{
 				cont++;
 			}
@@ -111,14 +140,16 @@ void Chaturanga:: tokenss(string cords){
 			cont++;
 		}
 	}
-	
-	if(cont!=0){
-	string c;
-	cout<<"ERROR:Ingrese las coordenadas denuevo"<<endl<<":";
-	cin	>>c;
-	tokenss(c);
+	if(tablero[x_esta][y_esta]==NULL){
+		cont++;
 	}
 	
+	if(cont!=0){
+		string c;
+		cout<<"ERROR:Ingrese las coordenadas denuevo"<<endl<<":";
+		cin	>>c;
+		tokenss(c);
+	}	
 }
 
 
